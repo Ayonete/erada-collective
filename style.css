@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #E6F3F8;
+    --light-blue: #C4F7FF;
+    --beige: #F5F0E8;
+    --yellow: #FFE500;
+    --black: #000000;
+    --dark-gray: #333333;
+    --light-gray: #666666;
+}
+
+body {
+    font-family: "Source Serif 4", serif;
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    font-family: Radio Canada Big, sans-serif
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    font-family: Radio Canada Big, sans-serif;
+}
+
+.nav a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav a:hover {
+    opacity: 0.7;
+}
+
+/* Hero Section */
+#herosection {
+    background: #93d9f5;
+    background: linear-gradient(180deg, #A8D3FF 0%, #FFF4DF 100%);
+    padding: 100px 40px 100px;
+    text-align: center;
+    margin-top: -70px;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.hero-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 5em;
+    color: var(--black);
+    margin-bottom: 10px;
+    font-weight: 500;
+    margin-bottom: -3px;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    font-family: 'Radio Canada Big', sans-serif;
+    font-size: 5em;
+    font-weight: 100;
+    color: var(--black);
+    margin-bottom: 30px;
+    margin-top: -40px;
+    letter-spacing: -5px;
+}
+
+.hero-text {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--dark-gray);
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+
+.btn-primary {
+  background: var(--black);
+  color: #ffffff;  
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: opacity 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.hero-image-container {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+#heroimage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* What We Do Section */
+#what-we-do {
+    background: white;
+    padding: 100px 40px;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: Radio Canada Big, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 5;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--black);
+}
+
+.what-we-do-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.what-we-do-left p,
+.what-we-do-right p {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.subheading {
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.what-we-do-right ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.what-we-do-right ul li {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.what-we-do-right ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Mission Section */
+#our-mission {
+    background: var(--beige);
+    padding: 100px 40px;
+    background-image: url("bg.png");
+}
+
+.mission-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 5em;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 5;
+    color: var(--black);
+    letter-spacing: -2px;
+}
+
+.mission-subtitle {
+    font-family: 'Radio Canada Big', sans-serif;
+    font-size: 5em;
+    font-weight: 1;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 80px;
+    color: var(--black);
+    letter-spacing: -5px;
+}
+
+.mission-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-card {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--black);
+}
+
+.mission-card h4 {
+    font-family: 'Radio Canada Big', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 20px;
+    color: var(--black);
+    line-height: 1.3;
+}
+
+.mission-card p {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    line-height: 1.7;
+}
+
+/* Responsive Design for Mission Section */
+@media (max-width: 968px) {
+    .mission-cards {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+/* Join Us Section */
+#join-us-section {
+    background: white;
+    padding: 100px 40px;
+}
+
+.join-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px dashed var(--light-gray);
+    border-radius: 12px;
+    padding: 60px 50px;
+    position: relative;
+}
+
+.quote-mark {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    font-size: 8rem;
+    color: #E0E0E0;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1;
+    opacity: 0.3;
+}
+
+.join-us-container .section-title {
+    margin-bottom: 30px;
+}
+
+.join-us-quote {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: var(--black);
+}
+
+.join-us-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.join-us-left h5,
+.join-us-right h5 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.join-us-left p,
+.join-us-right p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.join-us-right ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.join-us-right ul li {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.join-us-right ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.join-us-container a {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+.join-us-container a:hover {
+    opacity: 0.7;
+}
+
+.join-us-note {
+    font-size: 0.95rem;
+    color: var(--light-gray);
+    font-style: italic;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #E0E0E0;
+}
+
+/* Footer */
+footer {
+    background: var(--yellow);
+    padding: 30px 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 30px;
+    font-family: Radio Canada Big, sans-serif;
+}
+
+.footer-nav a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--black);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .what-we-do-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .join-us-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mission-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav {
+        gap: 20px;
+    }
+
+    #herosection {
+        padding: 60px 20px 80px;
+    }
+
+    #what-we-do,
+    #our-mission,
+    #join-us-section {
+        padding: 60px 20px;
+    }
+
+    .join-us-container {
+        padding: 40px 30px;
+    }
+
+    .quote-mark {
+        top: 20px;
+        left: 30px;
+        font-size: 5rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .mission-title {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        margin-bottom: 40px;
+    }
+
+    .mission-card {
+        padding: 35px 25px;
+    }
+
+    .join-us-container {
+        padding: 30px 20px;
+    }
+
+    .quote-mark {
+        font-size: 4rem;
+        top: 15px;
+        left: 20px;
+    }
+}
