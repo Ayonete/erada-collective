@@ -21,6 +21,9 @@ body {
     overflow-x: hidden;
 }
 
+.button{
+    color: white;
+}
 /* Header */
 .header {
     position: sticky;
