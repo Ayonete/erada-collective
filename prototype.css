@@ -1,0 +1,40 @@
+#herosection:has(.art-preview) { padding-bottom: 36px; }
+#herosection:has(.art-preview) + #what-we-do { padding-top: clamp(55px, 8vw, 100px); }
+.art-preview { width: min(1080px, 100%); margin: 36px auto 0; }
+.art-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; height: clamp(300px, 43vw, 500px); transition: grid-template-columns .32s ease; }
+.art-column { display: grid; grid-template-rows: 1.2fr .8fr; min-height: 0; min-width: 0; gap: 8px; transition: grid-template-rows .32s ease; }
+.art-column:nth-child(even) { grid-template-rows: .8fr 1.2fr; }
+.art-tile { padding: 0; border: 0; border-radius: 12px; overflow: hidden; min-width: 0; min-height: 0; background: white; cursor: pointer; }
+.art-tile img { display: block; width: 100%; height: 100%; object-fit: contain; filter: url(#scan-detail) saturate(1.13); }
+.art-grid[data-mode="masonry"]:has(.art-column:nth-child(1) .is-active) { grid-template-columns: 1.7fr 1fr .9fr; }
+.art-grid[data-mode="masonry"]:has(.art-column:nth-child(2) .is-active) { grid-template-columns: .9fr 1.7fr 1fr; }
+.art-grid[data-mode="masonry"]:has(.art-column:nth-child(3) .is-active) { grid-template-columns: .9fr 1fr 1.7fr; }
+.art-grid .art-column:has(.is-active:first-child) { grid-template-rows: 1.8fr .7fr; }
+.art-grid .art-column:has(.is-active:last-child) { grid-template-rows: .7fr 1.8fr; }
+.art-grid .art-column:has(.art-tile:only-child) { grid-template-rows: minmax(0, 1fr); }
+@media (max-width: 640px) {
+    .art-grid { height: clamp(235px, 72vw, 440px); gap: 5px; }
+    .art-column { gap: 5px; }
+}
+@media (prefers-reduced-motion: reduce) { .art-grid, .art-column { transition: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+    .art-grid[data-mode="masonry"], .art-grid[data-mode="masonry"] .art-column {
+        transition-duration: .5s;
+    }
+    .art-grid[data-mode="masonry"]:hover, .art-grid[data-mode="masonry"]:hover .art-column {
+        transition-duration: .26s;
+    }
+}
+.art-tile:focus-visible { outline: 3px solid #2865ba; outline-offset: 2px; }
+
+.art-tile { position: relative; }
+.art-tile .robot-detail {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    filter: url(#robot-detail) saturate(1.13);
+    mask-image: linear-gradient(to right, transparent var(--detail-start), black var(--detail-end));
+}
+.robot-detail--lung { --detail-start: 48%; --detail-end: 57%; }
+.robot-detail--hand { --detail-start: 56%; --detail-end: 70%; }

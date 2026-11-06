@@ -5,6 +5,7 @@
 }
 
 :root {
+    --hero-blue: #A8D3FF;
     --primary-blue: #E6F3F8;
     --light-blue: #C4F7FF;
     --beige: #F5F0E8;
@@ -19,6 +20,7 @@ body {
     color: var(--black);
     line-height: 1.6;
     overflow-x: hidden;
+    background: linear-gradient(var(--hero-blue), var(--hero-blue)) top / 100% 120px no-repeat;
 }
 
 .button{
@@ -69,7 +71,7 @@ body {
 
 /* Hero Section */
 #herosection {
-    background: linear-gradient(180deg, #A8D3FF 0%, #FFF4DF 100%);
+    background: linear-gradient(180deg, var(--hero-blue) 0%, #FFF4DF 100%);
     padding: 100px 40px 300px;
     text-align: center;
     margin-top: -70px;

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="prototype.css?v=12">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
@@ -12,6 +13,28 @@
  <title>Erada Collective</title>
 </head>
 <body>
+    <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+        <defs>
+            <filter id="scan-detail" color-interpolation-filters="sRGB">
+                <feConvolveMatrix order="3" kernelMatrix="0 -.18 0 -.18 1.72 -.18 0 -.18 0"
+                    edgeMode="duplicate" preserveAlpha="true" />
+                <feComponentTransfer>
+                    <feFuncR type="table" tableValues="0 .09 .22 .36 .51 .67 .83 1" />
+                    <feFuncG type="table" tableValues="0 .09 .22 .36 .51 .67 .83 1" />
+                    <feFuncB type="table" tableValues="0 .09 .22 .36 .51 .67 .83 1" />
+                </feComponentTransfer>
+            </filter>
+            <filter id="robot-detail" color-interpolation-filters="sRGB">
+                <feConvolveMatrix order="3" kernelMatrix="0 -.24 0 -.24 1.96 -.24 0 -.24 0"
+                    edgeMode="duplicate" preserveAlpha="true" />
+                <feComponentTransfer>
+                    <feFuncR type="table" tableValues="0 .08 .19 .32 .47 .62 .79 1" />
+                    <feFuncG type="table" tableValues="0 .08 .19 .32 .47 .62 .79 1" />
+                    <feFuncB type="table" tableValues="0 .08 .19 .32 .47 .62 .79 1" />
+                </feComponentTransfer>
+            </filter>
+        </defs>
+    </svg>
     <header class="header">
         <div class="header-container">
             <!-- <div class="logo">Erada Collective</div> -->
@@ -31,8 +54,10 @@
             <p class="hero-text">Within an inter-disciplinary community of practice (CoP), we support professionals and innovators to enhance their own professional fulfilment through critically evaluated, co-designed data and inclusive digital practices, innovations and creative expression.</p>
             <a href="https://forms.gle/bW1X1jraCaySuX7UA" target="_blank"><button class="btn-primary">Join us</button></a>
         </div>
-        <div class="hero-image-container">
-            <img id="heroimage" src="statstock.png" alt="Healthcare Professionals Collaborating">
+        <div class="art-preview">
+            <div class="art-grid" data-mode="masonry" role="group" aria-label="Healthcare and technology illustrations">
+                <div class="art-column"><button class="art-tile" type="button" aria-pressed="false"><img src="hero-6.jpg" alt="Human lung beside a mechanical lung"><img class="robot-detail robot-detail--lung" src="hero-6.jpg" alt="" aria-hidden="true"></button><button class="art-tile" type="button" aria-pressed="false"><img src="hero-1.jpg" alt="Hand reaching toward a skeletal hand"></button></div><div class="art-column"><button class="art-tile" type="button" aria-pressed="false"><img src="hero-5.jpg" alt="Healthcare worker and robot beside an illustrated heart"></button><button class="art-tile" type="button" aria-pressed="false"><img src="hero-7.jpg" alt="Heart, pulse line and stethoscope"></button></div><div class="art-column"><button class="art-tile" type="button" aria-pressed="false"><img src="hero-3.jpg" alt="Human and robotic hands reaching toward a heart symbol"><img class="robot-detail robot-detail--hand" src="hero-3.jpg" alt="" aria-hidden="true"></button></div>
+            </div>
         </div>
     </section>
 
@@ -159,5 +184,6 @@
             <p class="copyright">© 2025 • All rights reserved</p>
         </div>
     </footer>
+<script src="prototype.js?v=10"></script>
 </body>
 </html>
